@@ -55,14 +55,71 @@ section {
   margin-left: 1rem;
   margin-right: 1rem;
   position: relative;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
-  position: relative;
   border-radius: 12px;
   background: #1e1f2557;
   border: 1px solid #2a2b32;
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.05);
+  overflow: hidden; /* necessario per il blur */
 }
 
+/* linea gradiente dorata */
+.chat-animation-wrapper::after,
+.matrix-wrapper::after,
+.review-animation-wrapper::after,
+.calendar-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* centrato */
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(249,205,128,0) 0%,
+    #F9CD80 50%,
+    rgba(249,205,128,0) 100%
+  );
+  transition: width 0.6s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 2;
+}
+
+/* glow blur sopra la linea */
+.chat-animation-wrapper::before,
+.matrix-wrapper::before,
+.review-animation-wrapper::before,
+.calendar-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: 3px; /* appena sopra la linea */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 12px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249,205,128,0.35) 0%,
+    rgba(249,205,128,0) 70%
+  );
+  filter: blur(12px);
+  transition: width 0.6s ease;
+  z-index: 1;
+}
+
+/* al passaggio del mouse espandiamo linea e glow */
+.chat-animation-wrapper:hover::after,
+.matrix-wrapper:hover::after,
+.review-animation-wrapper:hover::after,
+.calendar-wrapper:hover::after,
+.chat-animation-wrapper:hover::before,
+.matrix-wrapper:hover::before,
+.review-animation-wrapper:hover::before,
+.calendar-wrapper:hover::before {
+  width: 100%;
+}
