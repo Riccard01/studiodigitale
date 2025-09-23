@@ -4,18 +4,28 @@ class GlowingParticles extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
+  static get observedAttributes() {
+    return ["index"];
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (name === "index") {
+      this.updateIndex(newVal);
+    }
+  }
+
   connectedCallback() {
-    const particleCount = 80; // totale particelle
+    const particleCount = 80; 
     const colors = ["#F9CD80"];
-    const sizes = [1, 0.7, 0.4]; // 3 grandezze
-    const blurs = ["4px", "2px", "0px"]; // 3 livelli
+    const sizes = [2, 1.2, 0.8]; // più grandi di prima
+    const blurs = ["6px", "3px", "0px"]; // blur più deciso
 
     const particles = Array.from({ length: particleCount }, () => {
       const size = sizes[Math.floor(Math.random() * sizes.length)];
       const blur = blurs[Math.floor(Math.random() * blurs.length)];
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-      const duration = 20 + Math.random() * 20; // velocità random
+      const duration = 15 + Math.random() * 15;
       const delay = Math.random() * -20;
       return { size, blur, x, y, duration, delay, color: colors[0] };
     });
@@ -29,13 +39,16 @@ class GlowingParticles extends HTMLElement {
           width: 100%;
           height: 100%;
           overflow: hidden;
-          z-index: -1;
+          z-index: ${this.getAttribute("index") || -1};
         }
         .particle {
           position: absolute;
           border-radius: 50%;
           background: #F9CD80;
           animation: float linear infinite;
+          box-shadow: 0 0 6px rgba(249,205,128,0.9),
+                      0 0 12px rgba(249,205,128,0.8),
+                      0 0 20px rgba(249,205,128,0.7);
         }
         @keyframes float {
           0%   { transform: translateY(0) translateX(0); opacity: 0; }
@@ -63,6 +76,16 @@ class GlowingParticles extends HTMLElement {
         )
         .join("")}
     `;
+  }
+
+  updateIndex(value) {
+    if (this.shadowRoot) {
+      this.shadowRoot.querySelector("style").textContent =
+        this.shadowRoot.querySelector("style").textContent.replace(
+          /z-index:.*;/,
+          `z-index: ${value};`
+        );
+    }
   }
 }
 
