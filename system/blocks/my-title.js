@@ -69,6 +69,7 @@ class MyTitle extends HTMLElement {
       <style>
         :host {
           display: block;
+          width: 100%;
         }
 
         :host([position="absolute"]) .wrapper {
