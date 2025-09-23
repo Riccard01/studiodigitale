@@ -73,84 +73,110 @@ class ReviewAnimation extends HTMLElement {
     setTimeout(step, startDelay);
   }
 
-  render() {
-    const L = this.originalLines.length;
-    const LINE_H = 26;
-    const PAD_Y = 12;
-    const containerH = PAD_Y * 2 + L * LINE_H;
-    const scale = parseFloat(this.getAttribute("scale")) || 1;
+render() {
+  const L = this.originalLines.length;
+  const LINE_H = 26;
+  const PAD_Y = 12;
+  const containerH = PAD_Y * 2 + L * LINE_H;
+  const scale = parseFloat(this.getAttribute("scale")) || 1;
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        .scale-wrapper {
-          transform: scale(${scale});
-          transform-origin: top left;
-          display: inline-block;
-        }
-        .code-wrap {
-          position: relative;
-          width: fit-content;
-          height: ${containerH}px;
-          padding: ${PAD_Y}px 14px;
-          border-radius: 12px;
-          background: #1e1f2557;
-          border: 1px solid #2a2b32;
-          box-shadow: inset 0 1px 2px rgba(255,255,255,0.05);
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-          color: #e5e7eb;
-          overflow: hidden;
-        }
-        .lines { position: relative; z-index: 1; }
-        .code-line {
-          display: flex;
-          gap: 12px;
-          align-items: center;
-          white-space: pre;
-        }
-        .ln {
-          width: 28px;
-          color: #9aa0a6;
-          text-align: right;
-          user-select: none;
-          opacity: .7;
-        }
-        .scanner {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          background: linear-gradient(90deg,
-            rgba(249,205,128,0) 0%,
-            rgba(249,205,128,0.20) 18%,
-            rgba(249,205,128,0.40) 48%,
-            rgba(249,205,128,0.20) 82%,
-            rgba(249,205,128,0) 100%);
-          box-shadow:
-            0 0 22px rgba(249,205,128,0.65),
-            0 0 36px rgba(249,205,128,0.9),
-            inset 0 0 14px rgba(249,205,128,0.5);
-          border-radius: 6px;
-          z-index: 0;
-          mix-blend-mode: screen;
-          pointer-events: none;
-          backdrop-filter: blur(3px);
-          animation: shimmer 0.2s linear infinite;
-        }
-        @keyframes shimmer {
-          0% { filter: brightness(1); }
-          50% { filter: brightness(1.1); }
-          100% { filter: brightness(1); }
-        }
-        .glow-err {
-          color: #3b82f6;
-          text-shadow: 0 0 12px rgba(59,130,246,1),
-                       0 0 24px rgba(59,130,246,0.95),
-                       0 0 36px rgba(59,130,246,0.85);
-          transition: color .2s ease, text-shadow .2s ease;
-        }
-      </style>
-      <div class="scale-wrapper">
+  this.shadowRoot.innerHTML = `
+    <style>
+      /* il componente occupa tutto il box del parent (es. 250x250) */
+      :host {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* contenitore per centrare sempre l'animazione */
+      .outer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* blocco scalato e CENTRATO in assoluto */
+      .scaled {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(${scale});
+        transform-origin: center center;
+      }
+
+      .code-wrap {
+        position: relative;
+        width: fit-content;         /* ampiezza del contenuto (≈520px) */
+        height: ${containerH}px;
+        padding: ${PAD_Y}px 14px;
+        border-radius: 12px;
+        background: #1e1f2557;
+        border: 1px solid #2a2b32;
+        box-shadow: inset 0 1px 2px rgba(255,255,255,0.05);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        color: #e5e7eb;
+        overflow: hidden;
+      }
+
+      .lines { position: relative; z-index: 1; }
+      .code-line {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        white-space: pre;
+      }
+      .ln {
+        width: 28px;
+        color: #9aa0a6;
+        text-align: right;
+        user-select: none;
+        opacity: .7;
+      }
+
+      /* scanner dorato */
+      .scanner {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg,
+          rgba(249,205,128,0) 0%,
+          rgba(249,205,128,0.20) 18%,
+          rgba(249,205,128,0.40) 48%,
+          rgba(249,205,128,0.20) 82%,
+          rgba(249,205,128,0) 100%);
+        box-shadow:
+          0 0 22px rgba(249,205,128,0.65),
+          0 0 36px rgba(249,205,128,0.9),
+          inset 0 0 14px rgba(249,205,128,0.5);
+        border-radius: 6px;
+        z-index: 0;
+        mix-blend-mode: screen;
+        pointer-events: none;
+        backdrop-filter: blur(3px);
+        animation: shimmer 0.2s linear infinite;
+      }
+      @keyframes shimmer {
+        0% { filter: brightness(1); }
+        50% { filter: brightness(1.1); }
+        100% { filter: brightness(1); }
+      }
+
+      .glow-err {
+        color: #3b82f6;
+        text-shadow: 0 0 12px rgba(59,130,246,1),
+                     0 0 24px rgba(59,130,246,0.95),
+                     0 0 36px rgba(59,130,246,0.85);
+        transition: color .2s ease, text-shadow .2s ease;
+      }
+    </style>
+
+    <div class="outer">
+      <div class="scaled">
         <div class="code-wrap">
-          ${this.scanIndex >= 0 ? `<div class="scanner" style="top:${PAD_Y + this.scanIndex * LINE_H}px;height:${LINE_H}px"></div>` : ""}
+          ${this.scanIndex >= 0
+            ? `<div class="scanner" style="top:${PAD_Y + this.scanIndex * LINE_H}px;height:${LINE_H}px"></div>`
+            : ""}
           <div class="lines">
             ${this.displayLines.map((line, i) => `
               <div class="code-line" style="height:${LINE_H}px;line-height:${LINE_H}px">
@@ -164,8 +190,10 @@ class ReviewAnimation extends HTMLElement {
           </div>
         </div>
       </div>
-    `;
-  }
+    </div>
+  `;
+}
+
 }
 
 customElements.define("review-animation", ReviewAnimation);

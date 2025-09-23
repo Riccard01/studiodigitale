@@ -7,7 +7,7 @@ body {
     margin: 5rem 0 0 0 ;
     overflow-x: hidden;
     background-color: #101114;
-    height: 32000px;
+    height: 3200px;
     font-family: var(--font-sans, "Plus Jakarta Sans", system-ui, sans-serif);
     font-weight: var(--weight-regular, 400);
     gap: 5rem;
@@ -47,7 +47,8 @@ section {
 
 .chat-animation-wrapper,
 .matrix-wrapper,
-.review-animation-wrapper {
+.review-animation-wrapper,
+.calendar-wrapper {
   width: 90%;
   height: 300px;
   padding: 1rem;
