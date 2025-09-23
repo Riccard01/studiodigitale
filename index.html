@@ -24,13 +24,24 @@
   <script type="module" src="./system/animations/my-chat-animation.js"></script>
   <script type="module" src="./system/animations/review-animation.js"></script>
   <script type="module" src="./system/animations/glowing-particles.js"></script>
+  <script type="module" src="./system/animations/mac-dock-animation.js"></script>
 
 
 
 </head>
 <body>
-
-
+<!-- 
+  <img src="./assets/images/scarabocchio.png" alt=""> -->
+<div class="cards-grid">
+<!-- <mac-dock-animation
+  items="7"
+  icon-size="48"
+  max-scale="1.8"
+  gap="10px"
+  sweep-ms="1100"
+  lift="3"
+  sigma="1.5">
+</mac-dock-animation> -->
 
 
 
@@ -39,7 +50,7 @@ index="-2"
 ></glowing-particles>
 
 
-<div class="review-animation-wrapper">
+<!-- <div class="review-animation-wrapper">
   <review-animation scale="0.7"></review-animation>
   <my-title
       title="Revisione dei testi"
@@ -59,7 +70,7 @@ index="-2"
       bottom="30px"
       heading-level="h3">
   </my-title>
-</div>
+</div> -->
 
 
 
@@ -91,7 +102,7 @@ index="-2"
 
 
 
-<div class="matrix-wrapper">
+<!-- <div class="matrix-wrapper">
   <my-matrix-effect speed="0.5"></my-matrix-effect>
 <my-title
       title="Boh"
@@ -111,11 +122,11 @@ index="-2"
       bottom="30px"
       heading-level="h3">
 </my-title>
-</div>
+</div> -->
 
 
 <div class="calendar-wrapper">
-  <my-calendar-animation></my-calendar-animation>
+<my-calendar-animation scale="0.7"></my-calendar-animation>
 <my-title
       title="Sincronizzazione calendario"
       subtitle="Integrazione Whatsapp Business"
@@ -135,8 +146,10 @@ index="-2"
       heading-level="h3">
 </my-title>
 </div>
-
-
+<glowing-particles
+index="-2"
+></glowing-particles>
+</div>
 
 <script>
   document.querySelector('experiences-gallery')

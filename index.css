@@ -50,7 +50,7 @@ section {
 .review-animation-wrapper,
 .calendar-wrapper {
   width: 90%;
-  height: 300px;
+  height: 400px;
   padding: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -122,4 +122,21 @@ section {
 .review-animation-wrapper:hover::before,
 .calendar-wrapper:hover::before {
   width: 100%;
+}
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: colonna unica */
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px; /* centra un po' il layout */
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* desktop: 2 colonne */
+  }
 }

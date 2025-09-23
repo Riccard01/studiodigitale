@@ -9,6 +9,18 @@ class MyCalendarAnimation extends HTMLElement {
     this.tearing = false;
   }
 
+  static get observedAttributes() {
+    return ["scale"];
+  }
+
+  attributeChangedCallback() {
+    this.render();
+  }
+
+  get scale() {
+    return parseFloat(this.getAttribute("scale")) || 1;
+  }
+
   connectedCallback() {
     this.render();
     this.startLoop();
@@ -53,17 +65,22 @@ class MyCalendarAnimation extends HTMLElement {
 
   render() {
     const rotations = [-8, -5, -2];
-    const getSymbol = s => (s === "ok" ? "✅" : "❌");
-    const getColor = s => (s === "ok" ? "#22c55e" : "#9CA3AF");
+    const getSymbol = (s) => (s === "ok" ? "✅" : "❌");
+    const getColor = (s) => (s === "ok" ? "#F9CD80" : "#9CA3AF");
 
     this.shadowRoot.innerHTML = `
       <style>
+        :host {
+          display: inline-block;
+          transform: scale(${this.scale});
+          transform-origin: center center;
+        }
         .stack {
           position: relative;
-          width: 180px;   /* quadrato */
-          height: 180px;  /* quadrato */
+          width: 180px;
+          height: 180px;
           overflow: visible;
-          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+          filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
         }
         .page {
           position: absolute;
@@ -72,10 +89,13 @@ class MyCalendarAnimation extends HTMLElement {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background: white;
-          border-radius: 10px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-          font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+          border-radius: 12px;
+          padding-top: 0.8rem;
+          font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+          background: rgba(30,31,37,0.55);
+          border: 1px solid rgba(255,255,255,0.1);
+          box-shadow: inset 0 1px 2px rgba(255,255,255,0.05);
+          backdrop-filter: blur(12px) saturate(180%);
           transform-origin: top left;
           transform: rotate(var(--rot)) translate(0, 0);
           opacity: 1;
@@ -84,25 +104,26 @@ class MyCalendarAnimation extends HTMLElement {
           position: absolute;
           width: 10px;
           height: 10px;
-          top: 4px;
-          left: 4px;
-          background: #555;
+          top: 6px;
+          left: 6px;
+          background: #F9CD80;
           border-radius: 50%;
-          box-shadow: inset 0 0 2px #000;
+          box-shadow: 0 0 6px rgba(249,205,128,0.7);
         }
         .page .day {
-          font-weight: 800;
+          font-weight: 700;
           font-size: 0.85rem;
           letter-spacing: 0.08em;
-          color: #111827; /* tinta unita grigio scuro */
+          color: #E5E7EB;
           margin-top: 20px;
         }
         .page .date {
           font-weight: 800;
           font-size: 2.2rem;
           line-height: 1;
-          color: #111827; /* tinta unita grigio scuro */
+          color: #fff;
           margin: 6px 0 10px 0;
+          text-shadow: 0 2px 6px rgba(0,0,0,0.45);
         }
         .page .caption {
           position: absolute;
