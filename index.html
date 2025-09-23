@@ -22,11 +22,44 @@
   <script src="./system/animations/my-matrix-effect.js" defer></script>
   <script src="./system/animations/my-calendar-animation.js" defer></script>
   <script type="module" src="./system/animations/my-chat-animation.js"></script>
+  <script type="module" src="./system/animations/review-animation.js"></script>
 
 
 
 </head>
 <body>
+
+
+
+
+
+
+
+
+<div class="chat-animation-wrapper" style="width:250px; height:250px; position:relative;">
+  <review-animation scale="0.7"></review-animation>
+  <my-title
+      title="Messaggi automatici"
+      subtitle="Integrazione Whatsapp Business"
+      alignment="center"
+      title-size="20px"
+      subtitle-size="1rem"
+      title-color="#ff4444"
+      subtitle-color="#888"
+      max-width="500px"
+      gap=".5rem"
+      position="absolute"
+      font-weight-title="800"
+      font-weight-subtitle="500"
+      shadow="0 3px 8px rgba(0,0,0,0.35)"
+      apple-style
+      bottom="-30px"
+      left="0"
+      heading-level="h2">
+  </my-title>
+</div>
+
+
 
 <div class="chat-animation-wrapper" style="width:250px; height:250px; position:relative;">
   <my-chat-animation bubble-height="22px"></my-chat-animation>
