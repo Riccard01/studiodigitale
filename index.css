@@ -13,15 +13,23 @@ body {
     gap: 5rem;
 }
 
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    width: 100vw;
-    background-color: #13161F;
+section.services {
+  display: flex;
+  justify-content: center;   
+  flex-direction: row;   /* centra gli elementi orizzontalmente */
+  margin: 0 1rem;
 }
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;              /* permette di andare a capo */
+  justify-content: center;   
+  flex-direction: row;   /* centra gli elementi orizzontalmente */
+  gap: 1rem;                    /* spaziatura fra gli elementi */
+  margin: 0 1rem;
+}
+
+
 
 * {
   -webkit-tap-highlight-color: transparent; /* mobile highlight */
@@ -154,8 +162,6 @@ section {
   height: 120px;
   width: 400px;
   padding: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
   position: relative;
   display: flex;
   justify-content: flex-end;

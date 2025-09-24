@@ -41,51 +41,55 @@
 
 
 
+<!--
+   ███████╗███████╗██████╗ ██╗   ██╗██╗███████╗██╗
+   ██╔════╝██╔════╝██╔══██╗██║   ██║██║██╔════╝██║
+   ███████╗█████╗  ██████╔╝██║   ██║██║███████╗██║
+   ╚════██║██╔══╝  ██╔═══╝ ██║   ██║██║╚════██║██║
+   ███████║███████╗██║     ╚██████╔╝██║███████║███████╗
+   ╚══════╝╚══════╝╚═╝      ╚═════╝ ╚═╝╚══════╝╚══════╝
+-->
 
 
-
-
-
-<div class="cards-grid">
-<!-- Servizi -->
-
-
-
-<div class="header-wrapper" style="display: flex; justify-content: center; align-items: center; margin-top: 3rem; margin-bottom: 1.5rem;">
-  <div class="section-header" style="display:  flex; z-index: 10; padding: .3rem 1.1rem; justify-content: center; align-items: center; position: relative; background: rgba(255, 139, 38, 0.2); height: 26px;">
-    <p style="color: #FFD9B8; font-weight: 600; letter-spacing: 1.2px;">Lavori</p>
-      <div style="background: rgba(255, 139, 38, 0.1); position: absolute; left: -10px; width:10px; height: 27px;"></div>
-      <div style="background: rgba(255, 139, 38, 0.1); position: absolute; right: -10px; width:10px; height: 27px;"></div>
+<section class="services">
+  
+  
+<div class="services-wrapper" style="display: flex; justify-content: center; align-items: center; ">
+  <div class="header-wrapper" style="display: flex; justify-content: center; align-items: center; margin-top: 3rem; margin-bottom: 1.5rem;">
+    <div class="section-header" style="display:  flex; z-index: 10; padding: .3rem 1.1rem; justify-content: center; align-items: center; position: relative; background: rgba(255, 139, 38, 0.2); height: 26px;">
+      <p style="color: #FFD9B8; font-weight: 600; letter-spacing: 1.2px;">Lavori</p>
+        <div style="background: rgba(255, 139, 38, 0.1); position: absolute; left: -10px; width:10px; height: 27px;"></div>
+        <div style="background: rgba(255, 139, 38, 0.1); position: absolute; right: -10px; width:10px; height: 27px;"></div>
+    </div>
+    <div class="sfumatura" style="background: rgba(255, 139, 38, 0.6); position: absolute; filter: blur(8px);  width: 92px; height: 38px; z-index: 1;"></div>
   </div>
-  <div class="sfumatura" style="background: rgba(255, 139, 38, 0.6); position: absolute; filter: blur(8px);  width: 92px; height: 38px; z-index: 1;"></div>
-</div>
+  <my-title
+    title="I nostri servizi"
+    subtitle="L’imprenditoria domotica è qui, cuciamo soluzioni su misura per la tua attività con l’obiettivo di convertire con poco stress."
+    alignment="center"
+    title-size="2rem"
+    subtitle-size="1.1rem"
+    title-color="#ff4444"
+    subtitle-color="#888"
+    max-width="500px"
+    gap=".5rem"
+    font-weight-title="800"
+    font-weight-subtitle="500"
+    shadow="0 3px 8px rgba(0,0,0,0.35)"
+    apple-style
+    heading-level="h2"      
+    no-shadow
+    >
+  </my-title>
 
 
 
-<my-title
-      title="I nostri servizi"
-      subtitle="L’imprenditoria domotica è qui, cuciamo soluzioni su misura per la tua attività con l’obiettivo di convertire con poco stress."
-      alignment="center"
-      title-size="2rem"
-      subtitle-size="1.1rem"
-      title-color="#ff4444"
-      subtitle-color="#888"
-      max-width="500px"
-      gap=".5rem"
-      font-weight-title="800"
-      font-weight-subtitle="500"
-      shadow="0 3px 8px rgba(0,0,0,0.35)"
-      apple-style
-      heading-level="h2"      
-      no-shadow
-      >
-</my-title>
 
-<div class="photo-wrapper">
-  <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 50px; top: -30px;">
-    <img src="./assets/images/canon.png" style="scale: .2; left: 20px;">
-  </div>
-<my-title
+  <div class="photo-wrapper">
+    <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 50px; top: -30px;">
+      <img src="./assets/images/canon.png" style="scale: .2; left: 20px;">
+    </div>
+    <my-title
       title="Fotografia"
       subtitle="Automatizza le prenotazioni e molto di più!"
       alignment="left"
@@ -102,16 +106,16 @@
       bottom="30px"
       heading-level="h3"      
       no-shadow>
-</my-title>
-</div>
-
-
-
-<div class="drone-wrapper">
-  <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 50px; top: 10px;">
-<img src="./assets/images/drone.png" style="scale: .2 ;">
+    </my-title>
   </div>
-<my-title
+
+
+
+  <div class="drone-wrapper">
+    <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 50px; top: 10px;">
+  <img src="./assets/images/drone.png" style="scale: .2 ;">
+    </div>
+    <my-title
       title="Dronate"
       subtitle="Automatizza le prenotazioni e molto di più!"
       alignment="left"
@@ -128,14 +132,14 @@
       bottom="30px"
       heading-level="h3"      
       no-shadow>
-</my-title>
-</div>
-
-<div class="stampa-wrapper">
-  <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 70px; top: -5px;">
-<img src="./assets/images/stampa.png" style="scale: .2 ;">
+    </my-title>
   </div>
-<my-title
+
+  <div class="stampa-wrapper">
+    <div class="pic-wrapper" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; position: absolute; right: 70px; top: -5px;">
+  <img src="./assets/images/stampa.png" style="scale: .2 ;">
+    </div>
+    <my-title
       title="Stampa digitale"
       subtitle="Automatizza le prenotazioni e molto di più!"
       alignment="left"
@@ -152,57 +156,36 @@
       bottom="30px"
       heading-level="h3"      
       no-shadow>
-</my-title>
-</div>
+    </my-title>
+  </div>
+  </div>
+</section>
 
 
 
 
 
 
-<my-matrix-effect width="100vw" height="50vw" font-size="8" speed=".2"></my-matrix-effect>
-
-
-<!-- 
-  <img src="./assets/images/scarabocchio.png" alt=""> -->
-  <!-- <mac-dock-animation
-  items="7"
-  icon-size="48"
-  max-scale="1.8"
-  gap="10px"
-  sweep-ms="1100"
-  lift="3"
-  sigma="1.5">
-</mac-dock-animation> -->
 
 
 
-<glowing-particles
-index="-2"
-></glowing-particles>
 
 
-<!-- <div class="review-animation-wrapper">
-  <review-animation scale="0.7"></review-animation>
-  <my-title
-  title="Revisione dei testi"
-  subtitle="Integrazione Whatsapp Business"
-  alignment="center"
-  title-size="20px"
-  subtitle-size="1rem"
-  title-color="#ff4444"
-  subtitle-color="#888"
-  max-width="500px"
-  gap=".5rem"
-  position="absolute"
-  font-weight-title="800"
-  font-weight-subtitle="500"
-  shadow="0 3px 8px rgba(0,0,0,0.35)"
-  apple-style
-  bottom="30px"
-  heading-level="h3">
-</my-title>
-</div> -->
+
+
+<!--
+   ███████╗███████╗██████╗ ██╗   ██╗██╗███████╗██╗
+   ██╔════╝██╔════╝██╔══██╗██║   ██║██║██╔════╝██║
+   ███████╗█████╗  ██████╔╝██║   ██║██║███████╗██║
+   ╚════██║██╔══╝  ██╔═══╝ ██║   ██║██║╚════██║██║
+   ███████║███████╗██║     ╚██████╔╝██║███████║███████╗
+   ╚══════╝╚══════╝╚═╝      ╚═════╝ ╚═╝╚══════╝╚══════╝
+-->
+
+
+
+
+
 
 
 
