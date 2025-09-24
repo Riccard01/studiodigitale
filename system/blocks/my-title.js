@@ -10,7 +10,8 @@ class MyTitle extends HTMLElement {
       'title','subtitle','alignment','title-size','subtitle-size',
       'position','top','left','right','bottom','z-index','heading-level',
       'title-color','subtitle-color','max-width','gap',
-      'font-weight-title','font-weight-subtitle','shadow','apple-style'
+      'font-weight-title','font-weight-subtitle','shadow','apple-style',
+      'no-shadow' // 👈 nuovo attributo osservato
     ];
   }
 
@@ -62,6 +63,7 @@ class MyTitle extends HTMLElement {
     const fontWeightSubtitle = this.getAttribute('font-weight-subtitle') || '400';
     const shadow = this.getAttribute('shadow') || '0 2px 6px rgba(0,0,0,0.25)';
     const appleStyle = this.hasAttribute('apple-style');
+    const noShadow = this.hasAttribute('no-shadow'); // 👈 controllo nuovo attributo
 
     this._applyHostPositioning();
 
@@ -81,7 +83,6 @@ class MyTitle extends HTMLElement {
           flex-direction: column;
           align-items: ${alignment === 'left' ? 'flex-start' : alignment === 'right' ? 'flex-end' : 'center'};
           gap: ${gap};
-          margin: 3rem 1rem;
           max-width: ${maxWidth};
         }
 
@@ -91,7 +92,7 @@ class MyTitle extends HTMLElement {
           line-height: 1.2;
           margin: 0;
           text-align: ${alignment};
-          text-shadow: ${shadow};
+          ${noShadow ? 'text-shadow: none;' : `text-shadow: ${shadow};`}
 
           ${appleStyle 
             ? `background: linear-gradient(to bottom, #fff 0%, #ddd 100%);
