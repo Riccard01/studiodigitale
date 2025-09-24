@@ -15,9 +15,15 @@ body {
 
 section.services {
   display: flex;
-  justify-content: center;   
-  flex-direction: row;   /* centra gli elementi orizzontalmente */
+  justify-content: center;
+  align-items: center;   
+  flex-direction: column;   /* centra gli elementi orizzontalmente */
   margin: 0 1rem;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;   
 }
 
 .services-wrapper {
@@ -26,7 +32,8 @@ section.services {
   justify-content: center;   
   flex-direction: row;   /* centra gli elementi orizzontalmente */
   gap: 1rem;                    /* spaziatura fra gli elementi */
-  margin: 0 1rem;
+
+  margin-top: 3rem;
 }
 
 
