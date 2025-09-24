@@ -24,6 +24,7 @@ section.services {
 .header-wrapper {
   display: flex;
   justify-content: center;   
+  flex-direction: column;
 }
 
 .services-wrapper {
