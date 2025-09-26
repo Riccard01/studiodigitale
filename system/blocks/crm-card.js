@@ -124,7 +124,7 @@ class CrmCard extends HTMLElement {
           subtitle="Da Whatsapp Business all’email marketing, automatizza i tuoi leads."
           alignment="left"
           title-size="1.8rem"
-          subtitle-size="1.1rem"
+          subtitle-size="1.2rem"
           title-color="#ff4444"
           subtitle-color="#CFCFCF"
           max-width="500px"
@@ -135,6 +135,8 @@ class CrmCard extends HTMLElement {
           apple-style
           heading-level="h2"
           no-shadow
+          line-height-title="1"
+          line-height-subtitle="1.6"
         ></my-title> 
 
         <div class="chat">

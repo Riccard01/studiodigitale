@@ -11,7 +11,9 @@ class MyTitle extends HTMLElement {
       'position','top','left','right','bottom','z-index','heading-level',
       'title-color','subtitle-color','max-width','gap',
       'font-weight-title','font-weight-subtitle','shadow','apple-style',
-      'no-shadow' // 👈 nuovo attributo osservato
+      'no-shadow',
+      'line-height-title',     // 👈 nuovo
+      'line-height-subtitle'   // 👈 nuovo
     ];
   }
 
@@ -63,7 +65,10 @@ class MyTitle extends HTMLElement {
     const fontWeightSubtitle = this.getAttribute('font-weight-subtitle') || '400';
     const shadow = this.getAttribute('shadow') || '0 2px 6px rgba(0,0,0,0.25)';
     const appleStyle = this.hasAttribute('apple-style');
-    const noShadow = this.hasAttribute('no-shadow'); // 👈 controllo nuovo attributo
+    const noShadow = this.hasAttribute('no-shadow'); 
+    
+    const lineHeightTitle = this.getAttribute('line-height-title') || '1.2';
+    const lineHeightSubtitle = this.getAttribute('line-height-subtitle') || '1.4';
 
     this._applyHostPositioning();
 
@@ -89,7 +94,7 @@ class MyTitle extends HTMLElement {
         .title {
           font-size: ${titleSize};
           font-weight: ${fontWeightTitle};
-          line-height: 1.2;
+          line-height: ${lineHeightTitle};
           margin: 0;
           text-align: ${alignment};
           ${noShadow ? 'text-shadow: none;' : `text-shadow: ${shadow};`}
@@ -113,6 +118,7 @@ class MyTitle extends HTMLElement {
         .subtitle {
           font-size: ${subtitleSize};
           font-weight: ${fontWeightSubtitle};
+          line-height: ${lineHeightSubtitle};
           margin: 0;
           text-align: ${alignment};
           color: ${subtitleColor || 'var(--my-subtitle-color, #D1D5DB)'};
