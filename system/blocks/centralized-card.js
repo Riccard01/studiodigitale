@@ -34,14 +34,13 @@ class CentralizedCard extends HTMLElement {
 
         .circle-bg {
           position: absolute;
-          top: -150px;
+          top: -405px;
           left: 50%;
           transform: translateX(-50%);
-          width: 340px;
-          height: 340px;
+          width: 490px;
+          height: 600px;
           border-radius: 50%;
           background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-          border: 1px solid rgba(255,255,255,0.2);
           z-index: 0;
         }
 
@@ -97,18 +96,18 @@ class CentralizedCard extends HTMLElement {
       <div class="card">
 <linea-element
     path-d="M 40 170 A 170 170 0 0 0 380 170"
-    line-width="2"
-    pulse-radius="14"
-    speed="8"
+    line-width="1"
+    pulse-radius="15"
+    speed="3"
     impulse="true"
-    impulse-number="1"
+    impulse-number="6"
     color="#FFFFFF"
     back-and-forth="shot"
     ease="out"
     loop
-    top="10px"
-    left="0"
-    style="width:420px; height:320px;"
+    top="-357px"
+    left="-70px"
+    style="width:533px; height:600px;"
 ></linea-element>
         <div class="circle-bg"></div>
 

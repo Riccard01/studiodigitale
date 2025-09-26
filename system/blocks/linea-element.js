@@ -68,7 +68,7 @@ class LineaElement extends HTMLElement {
           stroke: rgba(255,255,255,0.3);
           stroke-width: ${lineWidth};
           stroke-linecap: round;
-          stroke-dasharray: 10 8;
+          stroke-dasharray: 5 5;
           fill: none;
         }
       </style>
