@@ -27,7 +27,10 @@
   <script type="module" src="./system/animations/mac-dock-animation.js"></script>
   <script type="module" src="./system/blocks/section-header.js"></script>
   <script type="module" src="./system/blocks/linea-element.js"></script>
-
+  <script type="module" src="./system/blocks/experiences-gallery.js"></script>
+  <script type="module" src="./system/blocks/experience-card.js"></script>
+  <script type="module" src="./system/blocks/ds-button.js"></script>
+  <script type="module" src="./system/blocks/crm-card.js"></script>
   
 
 
@@ -35,8 +38,32 @@
 </head>
 <body>
 
+<crm-card></crm-card>
 
+<glowing-particles></glowing-particles>
 
+<div class="header-wrapper">
+    <section-header label="Contattaci"></section-header>
+    <my-title
+      title="I nostri servizi"
+      subtitle="L’imprenditoria domotica è qui, cuciamo soluzioni su misura per la tua attività con l’obiettivo di convertire con poco stress."
+      alignment="center"
+      title-size="2.5rem"
+      subtitle-size="1.1rem"
+      title-color="#ff4444"
+      subtitle-color="#E6E6E6"
+      max-width="500px"
+      gap=".5rem"
+      font-weight-title="800"
+      font-weight-subtitle="500"
+      shadow="0 3px 8px rgba(0,0,0,0.35)"
+      apple-style
+      heading-level="h1"      
+      no-shadow
+      >
+    </my-title>
+</div>
+<experiences-gallery></experiences-gallery>
 
 <!-- fallback: linea 200px, tratteggiata, cap rotondi -->
 
