@@ -109,6 +109,26 @@ class CentralizedCard extends HTMLElement {
     left="-70px"
     style="width:533px; height:600px;"
 ></linea-element>
+
+<linea-element
+  path-d="M 40 200 A 170 170 0 0 0 380 200"
+  line-width="1"
+  pulse-radius="15"
+  speed="3"
+  impulse="true"
+  impulse-number="6"
+  color="#45ff31ff"
+  back-and-forth="shot"
+  ease="out"
+  loop
+  top="-397px"
+  left="-43px"
+  style="width:533px; height:600px; transform:scaleX(-1);"
+></linea-element>
+
+
+
+
         <div class="circle-bg"></div>
 
         <div class="main-icon">
