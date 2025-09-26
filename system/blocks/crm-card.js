@@ -7,7 +7,7 @@ class CrmCard extends HTMLElement {
 
   _render() {
     const userSize = "78px"; // dimensione avatar utente
-    const replySize = this.getAttribute("reply-size") || "98px"; // personalizzabile
+    const replySize = this.getAttribute("reply-size") || "80px"; // personalizzabile
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -73,7 +73,6 @@ class CrmCard extends HTMLElement {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          border-radius: 50%;
         }
 
         .avatar.user {
@@ -87,10 +86,10 @@ class CrmCard extends HTMLElement {
         }
 
         .avatar img {
-          width: 100%;
-          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
           object-fit: cover;
-          border-radius: 50%;
+          display: block;
         }
 
         .bubble {
@@ -110,7 +109,7 @@ class CrmCard extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: center;
-          text-align: center;
+          text-align: left;
         }
 
         .bubble.reply {
