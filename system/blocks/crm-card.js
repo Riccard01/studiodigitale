@@ -135,7 +135,7 @@ class CrmCard extends HTMLElement {
           apple-style
           heading-level="h2"
           no-shadow
-        ></my-title>
+        ></my-title> 
 
         <div class="chat">
           <div class="row">
