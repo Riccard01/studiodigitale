@@ -57,7 +57,7 @@ class CentralizedCard extends HTMLElement {
 
         .wrapper-title {
         display:flex;
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
         justify-content: center;
         text-align: center;
