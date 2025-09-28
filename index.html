@@ -37,11 +37,48 @@
 </head>
 <body>
 
-<crm-card></crm-card>
-  
 
-<centralized-card></centralized-card>
-<glowing-particles></glowing-particles>
+<section class="header" style="
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 20px;
+margin-top: 50px;
+
+">
+    <my-title
+      title="I nostri servizi"
+      subtitle="L’imprenditoria domotica è qui, cuciamo soluzioni su misura per la tua attività con l’obiettivo di convertire con poco stress."
+      alignment="center"
+      title-size="3.5rem"
+      subtitle-size="1.3rem"
+      title-color="#ff4444"
+      subtitle-color="#E6E6E6"
+      max-width="500px"
+      gap=".5rem"
+      font-weight-title="800"
+      font-weight-subtitle="500"
+      shadow="0 3px 8px rgba(0,0,0,0.35)"
+      apple-style
+      heading-level="h1"      
+      no-shadow
+      >
+    </my-title>
+  <div class="wrapper" style="
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+    ">
+    <crm-card></crm-card>
+    <centralized-card></centralized-card>
+    <glowing-particles></glowing-particles>
+    <crm-card></crm-card>
+  </div>
+</section>
 
 <div class="header-wrapper">
     <section-header label="Contattaci"></section-header>
