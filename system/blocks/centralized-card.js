@@ -64,28 +64,24 @@ class CentralizedCard extends HTMLElement {
 
         .apps {
           display: flex;
-          gap: 12px;
-          margin-top: 15px;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          margin-bottom: 5px;
           z-index: 2;
         }
 
-        .app-icon {
-          width: 38px;
-          height: 38px;
-          border-radius: 10px;
-          background: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        .wrapper-title {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+        
         }
 
-        .app-icon img {
-          width: 60%;
-          height: 60%;
-          object-fit: contain;
-        }
+
 
         my-title {
           margin-top: 15px;
@@ -108,6 +104,7 @@ class CentralizedCard extends HTMLElement {
       fill-opacity: 0.1;
       filter: blur(30px);
     }
+
 
 
 
@@ -166,32 +163,34 @@ class CentralizedCard extends HTMLElement {
           <img src="${this.getAttribute("icon") || "./assets/images/logo.png"}" alt="main icon">
         </div>
 
-        <div class="apps">
-          <div class="app-icon"><img src="./assets/images/app1.png" alt="app1"></div>
-          <div class="app-icon"><img src="./assets/images/app2.png" alt="app2"></div>
-          <div class="app-icon"><img src="./assets/images/app3.png" alt="app3"></div>
-          <div class="app-icon"><img src="./assets/images/app4.png" alt="app4"></div>
-        </div>
+        <wrapper-title>
+              <div class="apps">
+                <img src="./assets/icons/deliveroo.svg" alt="app1">
+                <img src="./assets/icons/paypal.svg" alt="app1">
+                <img src="./assets/icons/trip.svg" alt="app1">
+                <img src="./assets/icons/air.svg" alt="app1">
+              </div>
 
-        <my-title
-          title="Sistemi centralizzati"
-          subtitle="Collegati a centinaia di piattaforme e centralizza la gestione dei dati."
-          alignment="center"
-          title-size="1.8rem"
-          subtitle-size="1.2rem"
-          title-color="#ff4444"
-          subtitle-color="#CFCFCF"
-          max-width="500px"
-          gap=".5rem"
-          font-weight-title="800"
-          font-weight-subtitle="400"
-          shadow="0 3px 8px rgba(0,0,0,0.35)"
-          apple-style
-          heading-level="h2"
-          no-shadow
-          line-height-title="1"
-          line-height-subtitle="1.6"
-        ></my-title>
+              <my-title
+                title="Sistemi centralizzati"
+                subtitle="Collegati a centinaia di piattaforme e centralizza la gestione dei dati."
+                alignment="center"
+                title-size="1.8rem"
+                subtitle-size="1.2rem"
+                title-color="#ff4444"
+                subtitle-color="#CFCFCF"
+                max-width="500px"
+                gap=".5rem"
+                font-weight-title="800"
+                font-weight-subtitle="400"
+                shadow="0 3px 8px rgba(0,0,0,0.35)"
+                apple-style
+                heading-level="h2"
+                no-shadow
+                line-height-title="1"
+                line-height-subtitle="1.6"
+              ></my-title>
+        </wrapper-title>
       </div>
     `;
   }
