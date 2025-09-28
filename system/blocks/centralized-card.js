@@ -91,40 +91,71 @@ class CentralizedCard extends HTMLElement {
           margin-top: 15px;
           z-index: 2;
         }
+
+
+    .ellisse {
+      position: absolute;
+      top: 50px;
+      left: 80px;
+      width: 300px;
+      height: 300px;
+      z-index: 1; /* sotto tutto */
+      overflow: visible;
+    }
+
+    .ellisse ellipse {
+      fill: #FFFFFF;
+      fill-opacity: 0.1;
+      filter: blur(30px);
+    }
+
+
+
       </style>
 
-      <div class="card">
-<linea-element
-    path-d="M 40 170 A 170 170 0 0 0 210 340"
-    line-width="1"
-    pulse-radius="15"
-    speed="3"
-    impulse="true"
-    impulse-number="6"
-    color="#FFFFFF"
-    back-and-forth="shot"
-    ease="out"
-    loop
-    top="-365px"
-    left="-70px"
-    style="width:533px; height:600px;"
-></linea-element>
 
-<linea-element
-  path-d="M 40 170 A 170 170 0 0 0 210 340"
-  line-width="1"
-  pulse-radius="15"
-  speed="3"
-  impulse="true"
-  impulse-number="6"
-  color="#45ff31ff"
-  back-and-forth="shot"
-  ease="out"
-  loop
-  top="-367px"
-  left="-43px"
-  style="width:533px; height:600px; transform:scaleX(-1);"
-></linea-element>
+
+      
+      <div class="card">
+  <svg class="ellisse" xmlns="http://www.w3.org/2000/svg">
+    <ellipse 
+      cx="125.36" 
+      cy="122.115" 
+      rx="125.36" 
+      ry="122.115"/>
+  </svg>
+
+      <linea-element
+          path-d="M 40 170 A 170 170 0 0 0 210 340"
+          line-width="1"
+          pulse-radius="15"
+          speed="3"
+          impulse="true"
+          impulse-number="6"
+          color="#FFFFFF"
+          back-and-forth="shot"
+          ease="out"
+          loop
+          top="-365px"
+          left="-70px"
+          style="width:533px; height:600px;"
+      ></linea-element>
+
+      <linea-element
+        path-d="M 40 170 A 170 170 0 0 0 210 340"
+        line-width="1"
+        pulse-radius="15"
+        speed="3"
+        impulse="true"
+        impulse-number="6"
+        color="#45ff31ff"
+        back-and-forth="shot"
+        ease="out"
+        loop
+        top="-367px"
+        left="-43px"
+        style="width:533px; height:600px; transform:scaleX(-1);"
+      ></linea-element>
 
 
 
