@@ -53,6 +53,23 @@ class VisualCard extends HTMLElement {
         }
 
 
+    .ellisse {
+      position: absolute;
+      bottom: -310px;
+      left: 80px;
+      width: 500px !important;
+      height: 500px;
+      margin: 0;
+      padding: 0;
+      z-index: 1; /* sotto tutto */
+      overflow: visible;
+    }
+
+    .ellisse ellipse {
+      fill: #FFFFFF;
+      fill-opacity: 0.07;
+      filter: blur(30px);
+    }
         .grid {
           position: absolute;
           bottom: 0;
@@ -67,6 +84,13 @@ class VisualCard extends HTMLElement {
       </style>
 
       <div class="card">
+                <svg class="ellisse" xmlns="http://www.w3.org/2000/svg">
+            <ellipse 
+            cx="125.36" 
+            cy="122.115" 
+            rx="125.36" 
+            ry="122.115"/>
+        </svg>
               <my-title
                 title="Sistemi centralizzati"
                 subtitle="Collegati a centinaia di piattaforme e centralizza la gestione dei dati."
@@ -90,6 +114,7 @@ class VisualCard extends HTMLElement {
           <img src="./assets/images/canon.png" alt="camera lens">
         </div>
         <img class="grid" src="./assets/deco/grid.svg" alt="grid">
+
       </div>
     `;
   }
