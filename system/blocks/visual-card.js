@@ -52,6 +52,13 @@ class VisualCard extends HTMLElement {
           z-index: 2;
         }
 
+
+        .grid {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+        }
+
         .image-container img {
           max-width: 80%;
           height: auto;
@@ -82,6 +89,7 @@ class VisualCard extends HTMLElement {
         <div class="image-container">
           <img src="./assets/images/canon.png" alt="camera lens">
         </div>
+        <img class="grid" src="./assets/deco/grid.svg" alt="grid">
       </div>
     `;
   }
