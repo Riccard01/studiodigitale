@@ -20,7 +20,7 @@ class CentralizedCard extends HTMLElement {
           display: flex;
           flex-direction: column;
           gap: 20px;
-          height: 450px;
+          height: 480px;
           align-items: center;
           justify-content: flex-end;
           background-color: #404040;
@@ -40,27 +40,11 @@ class CentralizedCard extends HTMLElement {
           width: 490px;
           height: 600px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 80%);
           z-index: 0;
         }
 
-        .main-icon {
-          position: relative;
-          z-index: 2;
-          width: 70px;
-          height: 70px;
-          border-radius: 20px;
-          background: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 0 20px rgba(255,255,255,0.5);
-        }
 
-        .main-icon img {
-          width: 36px;
-          height: 36px;
-        }
 
         .apps {
           display: flex;
@@ -101,10 +85,20 @@ class CentralizedCard extends HTMLElement {
 
     .ellisse ellipse {
       fill: #FFFFFF;
-      fill-opacity: 0.1;
+      fill-opacity: 0.07;
       filter: blur(30px);
     }
 
+    .main-icon {
+
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      z-index: 2;
+    }
 
 
 
@@ -149,7 +143,7 @@ class CentralizedCard extends HTMLElement {
         back-and-forth="shot"
         ease="out"
         loop
-        top="-367px"
+        top="-365px"
         left="-43px"
         style="width:533px; height:600px; transform:scaleX(-1);"
       ></linea-element>
@@ -159,9 +153,7 @@ class CentralizedCard extends HTMLElement {
 
         <div class="circle-bg"></div>
 
-        <div class="main-icon">
-          <img src="${this.getAttribute("icon") || "./assets/images/logo.png"}" alt="main icon">
-        </div>
+        <img class="main-icon" src="./assets/icons/center.svg" alt="">
 
         <wrapper-title>
               <div class="apps">
