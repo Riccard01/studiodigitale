@@ -42,21 +42,6 @@ class VisualCard extends HTMLElement {
           z-index: 0;
         }
 
-        h2 {
-          margin: 0 0 12px 0;
-          font-size: 1.6rem;
-          font-weight: 700;
-          z-index: 2;
-        }
-
-        p {
-          margin: 0 0 25px 0;
-          font-size: 1rem;
-          line-height: 1.4;
-          color: #cfcfcf;
-          z-index: 2;
-        }
-
         .image-container {
           width: 100%;
           display: flex;
@@ -75,8 +60,25 @@ class VisualCard extends HTMLElement {
       </style>
 
       <div class="card">
-        <h2>Produzione Visiva</h2>
-        <p>Foto di interni, fotografie del prodotto, dronate e storie da raccontare.</p>
+              <my-title
+                title="Sistemi centralizzati"
+                subtitle="Collegati a centinaia di piattaforme e centralizza la gestione dei dati."
+                alignment="center"
+                title-size="1.8rem"
+                subtitle-size="1.2rem"
+                title-color="#ff4444"
+                subtitle-color="#CFCFCF"
+                max-width="500px"
+                gap=".5rem"
+                font-weight-title="800"
+                font-weight-subtitle="400"
+                shadow="0 3px 8px rgba(0,0,0,0.35)"
+                apple-style
+                heading-level="h2"
+                no-shadow
+                line-height-title="1"
+                line-height-subtitle="1.6"
+              ></my-title>
         <div class="image-container">
           <img src="./assets/images/canon.png" alt="camera lens">
         </div>
