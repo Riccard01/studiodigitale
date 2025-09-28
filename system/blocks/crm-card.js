@@ -22,7 +22,7 @@ class CrmCard extends HTMLElement {
           flex-direction: column;
           gap: 30px;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           background-color: #404040;
           border-radius: 10px;
           border: 0.75px solid #666;
