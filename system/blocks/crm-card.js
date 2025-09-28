@@ -26,7 +26,7 @@ class CrmCard extends HTMLElement {
           background-color: #404040;
           border-radius: 10px;
           border: 0.75px solid #666;
-          padding: 25px;
+          padding: 40px;
           color: white;
           box-sizing: border-box;
         }
